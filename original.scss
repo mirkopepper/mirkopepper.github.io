@@ -1,0 +1,232 @@
+/** Main CSS Document **/
+
+/* Settings */
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+
+$font:    Montserrat;
+$primary-color: #333;
+$grey-color: #ededed;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+html {
+  height: 100%;
+  background-color: $grey-color;
+  overflow-x: hidden;
+}
+body {
+	@extend html;
+  font: 100% $font;
+  font-size: 1.4em;
+  color: $primary-color;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+	@extend a;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.top {
+	width: 100%;
+	height: 40px;
+	ul {
+		float: right;
+		margin-top: 5px;
+	}
+}
+
+.top {
+	ul {
+		a,
+		a:focus,
+		a:hover {
+			color: $primary-color;
+		}
+	}
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+  margin-top: 100px;
+  background: #ffffff;
+  @include border-radius(15px);
+ 	-webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.img-circle {
+	width: 160px;
+	padding: 10px;
+	background: $grey-color;
+	margin-top: -110px;
+}
+
+.title {
+	font-size: 3em;
+	font-weight: 700;
+	letter-spacing: -4px;
+}
+
+.summary {
+	padding: 5px;
+	margin: 20px 0 40px;
+}
+
+hr {
+	margin-bottom: 40px;
+}
+
+.box{
+  margin-bottom: 30px;
+  text-align: left;
+  h2{
+  color: #E69138;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+	}
+	p{
+  font-size: 1.3em;
+  line-height: 1.5em;
+	}
+}
+
+.job{
+  margin-bottom: 15px;
+  .profession{
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+	}
+	.description{
+  font-size: 1.0em;
+  line-height: 1.5em;
+  color: #666666;
+  text-shadow: none;
+  margin-top: 5px;
+	}
+	.where {
+  font-size: 1.0em;
+  font-weight: 400;
+  color: #A4A4A4;
+  text-shadow: none;
+	}
+}
+
+.job .year {
+	@extend .where;
+}
+
+/* Footer */
+.footer {
+  color: $primary-color;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+@media (min-width: 768px) {
+  .foot {
+    position: relative;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .foot,
+  .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 700px) {
+  .foot,
+  .container {
+    width: 700px;
+  }
+}
+
+.education{
+  margin-top: 20px;
+  position: relative;
+  padding: 1em 0;
+  list-style: none;
+}
+
+.education {
+	li {
+  	width: 100%;
+  	z-index: 2;
+  	position: relative;
+  	float: left;
+	}
+	.year {
+  	width: 10%;
+  	background: #fff;
+  	padding: 10px;
+  	font-size: 1.2em;
+  	font-weight: 700;
+ 		display: inline-block;
+	}
+	.description{
+  	width: 80%;
+  	display: inline-block;
+  	background: #eee;
+  	margin-bottom: 10px;
+  	position: relative;
+  	padding: 10px 10px 0 10px;
+  	border-bottom: 1px solid #ddd;
+  h3{
+  		font-size: 1.2em;
+  		margin: 0;
+  		padding: 0;
+  		font-weight: 700;
+		}
+	p{
+  		font-size: 1.0em;
+  		margin-top: 5px;
+  		padding: 0;
+  		color: #666666;
+  		text-shadow: none;
+		}
+	}
+}
