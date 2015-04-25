@@ -26,7 +26,8 @@ body {
 /* Links */
 a, a:focus,
 a:hover {
-  text-decoration: none; }
+  text-decoration: none;
+  word-wrap: break-word; }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
